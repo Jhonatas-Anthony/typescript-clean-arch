@@ -24,14 +24,48 @@ export class Route {
         return this.props.title
     }
 
+    get gStartPosition() {
+        return this.props.startPosition
+    }
+
+    get gEndPosition() {
+        return this.props.endPosition
+    }
+
+    get gPoints(){
+        return this.props.points
+    }
+
     private set sTitle(t: string) {
         this.props.title = t
     }
 
-    updateTitle (t: string){
+    private set sStartPosition(t: Coords) {
+        this.props.startPosition = t
+    }
+
+    private set sEndPosition(t: Coords) {
+        this.props.endPosition = t
+    }
+
+    private set sPoints(t: Coords[]){
+        this.props.points = t
+    }
+
+    updateTitle(t: string) {
         //Esse método é necessário para caso nós queiramos:
         // Validar caracteres
         // Verificar Maiuscula e minuscula
+        // Isso se aplica a todos os outros
         this.sTitle = t
+    }
+
+    updatePosition(start: Coords, end: Coords) {
+        this.sStartPosition = start
+        this.sEndPosition = end
+    }
+
+    updatePoints(poinst: Coords[]){
+        this.sPoints = poinst
     }
 }

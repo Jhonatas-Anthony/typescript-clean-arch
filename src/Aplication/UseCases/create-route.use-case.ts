@@ -2,10 +2,14 @@
 // Onde separamos as responsabilidades
 
 import { Coords, Route } from "../../Domain/Entity/route.entity";
+import { RouteRepositoryInterface } from "../../Domain/Repositories/route.repository";
 
 class CreateRouteUseCase {
-    execute(input: CreateRouteInput) {
+    constructor(private routeRepo: RouteRepositoryInterface){}
+
+    async execute(input: CreateRouteInput) {
         const route = new Route(input)
+        await this.routeRepo.insert(route)
         return route.toJSON()
     }
 }

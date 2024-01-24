@@ -2,55 +2,36 @@
 // Essa rota será para a aplicação de monitoramento de veículos, com nome, ponto inicial e final, além de pontos de parada. 
 
 export type Coords = { latitute: number, longitude: number }
-
 export type RoutePublicProps = {
     title: string,
     startPosition: Coords,
     endPosition: Coords,
-    points: Coords[]
+    points?: Coords[]
 }
 
-class Route {
-    /* title: string;
-    startPosition: Coords;
-    endPosition: Coords;
-    points: Coords[]; */
-
+export class Route {
+    public props: Required<RoutePublicProps>
     constructor(
-        /* public title: string,
-        public startPosition: Coords,
-        public endPosition: Coords,
-        public points: Coords[] */
-        public props: RoutePublicProps,
-    ) { }
-    // Aqui definimos métodos como:
-    private set title(value: string) {
-        this.props.title = value
+        props: RoutePublicProps
+    ) {
+        this.props = {
+            ...props,
+            points: props.points || []
+        }
     }
 
-    
+    get gTitle() {
+        return this.props.title
+    }
+
+    private set sTitle(t: string) {
+        this.props.title = t
+    }
+
+    updateTitle (t: string){
+        //Esse método é necessário para caso nós queiramos:
+        // Validar caracteres
+        // Verificar Maiuscula e minuscula
+        this.sTitle = t
+    }
 }
-
-//exemplo para criar uma nova rota
-
-/* new Route('Rota 1', { latitute: 15, longitude: 16 }, { latitute: 25, longitude: 26 }, [
-    { latitute: 15, longitude: 16 },
-    { latitute: 20, longitude: 22 },
-    { latitute: 25, longitude: 26 }
-]) */
-
-const rota = new Route({
-    title: 'Rota 1',
-    startPosition: { latitute: 15, longitude: 16 },
-    endPosition: { latitute: 25, longitude: 26 },
-    points: [
-        { latitute: 15, longitude: 16 },
-        { latitute: 20, longitude: 22 },
-        { latitute: 25, longitude: 26 }
-    ]
-})
-
-// com o set, inves de fazer: 
-//rota.props.title = 'algo'
-// podemos
-//rota.title = 'algo'

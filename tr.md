@@ -48,5 +48,8 @@ Nos casos de uso, por exemplo ao criar algo, o meu caso de uso não quer saber c
 
 Assim surge a necessidade de criar na camada de dominio uma pasta chamada repositories, onde ali sim eu vou ter uma minima preocupação de o que vai ser retornado. 
 
-Uma boa arquitetura possui limites bem estabelecidos, como eu quero que minhas regras de negócio sejam bem definidas, eu dependo da interface (não a camada) usada no repository (inversão de dependencia)
+Uma boa arquitetura possui limites bem estabelecidos, como eu quero que minhas regras de negócio sejam bem definidas, eu dependo da interface (não a camada) usada no repository (inversão de dependencia).
+
+## Infra
+A infra é a ultima camada, mas para testar, podemos usar um banco de dados em memoria, ou unicamente o cache para armazenar e testar se está tudo indo bem
 

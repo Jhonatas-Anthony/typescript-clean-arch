@@ -4,7 +4,7 @@
 import { Coords, Route } from "../../Domain/Entity/route.entity";
 import { RouteRepositoryInterface } from "../../Domain/Repositories/route.repository";
 
-class CreateRouteUseCase {
+export class CreateRouteUseCase {
     constructor(private routeRepo: RouteRepositoryInterface){}
 
     async execute(input: CreateRouteInput) {

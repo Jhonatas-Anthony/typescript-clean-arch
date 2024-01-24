@@ -33,7 +33,9 @@ Nas regras de négocio, é uma boa pratica definir sets privados e definir nos m
 Os frameworks trazem pra gente um conceito de entidades anemicas, que não deixamos as regras de negocio com as entidades.
 
 Não me importa se os arquivos vão ficar em um txt, em um MYSQL, em um MONGO, nessa etapa a unica coisa que me importa são as regras de negócio. Devemos ser capazes de trocar banco de dados, libs ou frameworks sem nos importar com nada disso. 
+
 ## Camada De Aplicação
+
 Agora nós vamos para a camada de aplicação, começando pelos casos de uso
 
 Trabalhando com os casos de uso separados, temos a garantira que vamos isolar a responssabilidade de cada qual, fazendo juz ao S do SOLID - SIngle Responsabily Principle.
@@ -44,5 +46,7 @@ NA camada de aplicação define o que o software vai fazer, se quiseres descobri
 
 Nos casos de uso, por exemplo ao criar algo, o meu caso de uso não quer saber como aquela informação foi armazenada, nem onde,  isso não é uma obrigação nem dever dos casos de uso, mesmo que haja a necessidade de armazenar antes de retornar,
 
-Assim nós vamos trabalhar com as 
+Assim surge a necessidade de criar na camada de dominio uma pasta chamada repositories, onde ali sim eu vou ter uma minima preocupação de o que vai ser retornado. 
+
+Uma boa arquitetura possui limites bem estabelecidos, como eu quero que minhas regras de negócio sejam bem definidas, eu dependo da interface (não a camada) usada no repository (inversão de dependencia)
 

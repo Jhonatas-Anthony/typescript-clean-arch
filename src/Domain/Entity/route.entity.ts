@@ -68,4 +68,8 @@ export class Route {
     updatePoints(poinst: Coords[]){
         this.sPoints = poinst
     }
+
+    toJSON(){
+        return this.props
+    }
 }

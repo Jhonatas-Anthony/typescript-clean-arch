@@ -1,5 +1,7 @@
-projeto feito em base no vídeo do full cycle sobre arquitetura limpa com o projeto de monitoramento de veículos
+projeto feito em base no vídeo do full cycle sobre arquitetura limpa com o projeto de monitoramento de veículos:
+https://www.youtube.com/watch?v=yLPxkIxbNDg&t=2508s
 
+arquivo de anotações.
 
 para iniciar o projeto com node
 npm init -y
@@ -22,4 +24,4 @@ Nas regras de négocio, é uma boa pratica definir sets privados e definir nos m
 
 Os frameworks trazem pra gente um conceito de entidades anemicas, que não deixamos as regras de negocio com as entidades.
 
-Não me importa se os arquivos vão ficar em um txt, em um MYSQL, em um MONGO, nessa etapa a unica coisa que me importa são as regras de negócio. 
+Não me importa se os arquivos vão ficar em um txt, em um MYSQL, em um MONGO, nessa etapa a unica coisa que me importa são as regras de negócio. Devemos ser capazes de trocar banco de dados, libs ou frameworks sem nos importar com nada disso. 

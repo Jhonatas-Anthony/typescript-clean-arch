@@ -1,5 +1,5 @@
-import { Route } from "../Entity/route.entity";
+import { Route } from '../Entity/route.entity'
 
-export interface RouteRepositoryInterface{
-    insert(route: Route): Promise<void>
+export interface RouteRepositoryInterface {
+  insert(route: Route): Promise<void>
 }

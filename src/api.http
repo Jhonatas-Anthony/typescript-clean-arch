@@ -1,0 +1,17 @@
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "title": "Rota 3",
+    "startPosition": { "latitute": 15, "longitude": 16 },
+    "endPosition": { "latitute": 25, "longitude": 26 },
+    "points": [
+        { "latitute": 15, "longitude": 16 },
+        { "latitute": 20, "longitude": 22 },
+        { "latitute": 25, "longitude": 27 }
+    ]
+}
+
+###
+
+GET http://localhost:3000/routes

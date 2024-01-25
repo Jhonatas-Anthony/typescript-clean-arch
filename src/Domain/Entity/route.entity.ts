@@ -11,7 +11,9 @@ export type RoutePublicProps = {
 
 export class Route {
   public props: Required<RoutePublicProps>
-  constructor(props: RoutePublicProps) {
+  public readonly id: string
+  constructor(props: RoutePublicProps, id?: string) {
+    this.id = id || crypto.randomUUID()
     this.props = {
       ...props,
       points: props.points || []
@@ -63,11 +65,15 @@ export class Route {
     this.sEndPosition = end
   }
 
-  updatePoints(poinst: Coords[]) {
-    this.sPoints = poinst
+  updatePoints(points: Coords[]) {
+    this.sPoints = points
   }
 
   toJSON() {
-    return this.props
+    return {
+      id: this.id,
+      ...this.props
+    }
+
   }
 }

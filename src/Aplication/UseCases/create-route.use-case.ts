@@ -25,6 +25,7 @@ type CreateRouteInput = {
 // Imagine que na criação de usuário, não devemos retornar a senha ao criar um
 // Nesse caso específico, deixamos da maneira que está pois todos os dados não são criticos
 type CreateRouteOutput = {
+  id: string
   title: string
   startPosition: Coords
   endPosition: Coords

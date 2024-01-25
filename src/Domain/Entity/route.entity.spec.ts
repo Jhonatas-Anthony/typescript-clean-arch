@@ -9,6 +9,7 @@ describe('Route Test', () => {
     }
 
     const route = new Route(RouteNoPoints)
+    expect(route.id).toBeDefined()
     expect(route.props).toStrictEqual({
       ...RouteNoPoints,
       points: []
@@ -26,6 +27,7 @@ describe('Route Test', () => {
     }
 
     const route2 = new Route(RouteWithPoints)
+    expect(route.id).toBeDefined()
     expect(route2.props).toStrictEqual(RouteWithPoints)
   })
 

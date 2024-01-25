@@ -12,6 +12,7 @@ describe('Create Route Use Case', () => {
     })
 
     expect(output).toStrictEqual({
+      id: repo.items[0].id,
       title: 'Route 1',
       startPosition: { latitute: 10, longitude: 10 },
       endPosition: { latitute: 10, longitude: 10 },
